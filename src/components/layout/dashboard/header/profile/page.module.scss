@@ -1,0 +1,33 @@
+.container {
+	position: absolute;
+	top: 2.3rem;
+	right: 2.3rem;
+	&_content {
+		display: flex;
+		align-items: center;
+		&_user {
+			text-align: right;
+			margin-right: 0.75rem;
+			&_name {
+				margin-bottom: -0.25rem;
+				font-weight: 700;
+			}
+			&_email {
+				font-size: 1.07rem;
+				opacity: 0.4;
+			}
+		}
+		&_badge {
+			width: 2.5rem;
+			height: 2.5rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.82rem;
+			background-color: rgba(0, 0, 0, 1);
+			color: white;
+			border-radius: 0.25rem;
+			text-transform: uppercase;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+.rdp {
+	--rdp-cell-size: 32px;
+	--rdp-caption-font-size: 17px;
+	--rdp-background-color: rgba(255, 255, 255, 0.2);
+	--rdp-accent-color: #7551ff;
+	margin: 0.25rem;
+	font-size: 85%;
+}
+
+.container {
+	position: relative;
+	&_button {
+		position: absolute;
+		top: -0.5rem;
+		right: -1rem;
+		opacity: 0.3;
+		transition-duration: 266ms;
+		&:hover {
+			opacity: 1;
+			transition-property: opacity;
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+			transition-duration: 266ms;
+		}
+	}
+	&_picker {
+		top: calc(100% + 0.7rem);
+		position: absolute;
+		padding: 0.625rem;
+		background-color: rgb(255 255 255 / 1);
+		z-index: 5;
+		border-radius: 0.5rem;
+		box-shadow:
+			0 1px 3px 0 rgb(0 0 0 / 0.1),
+			0 1px 2px -1px rgb(0 0 0 / 1);
+	}
+}

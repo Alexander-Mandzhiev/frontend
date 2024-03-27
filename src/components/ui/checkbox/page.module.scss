@@ -1,0 +1,25 @@
+.checkbox {
+	position: relative;
+	display: inline-flex;
+	height: 20px;
+	width: 20px;
+	min-height: 20px;
+	appearance: none;
+	align-items: center;
+	justify-content: center;
+	border-width: 1px;
+	border-radius: 0.375rem;
+	border-color: rgb(201 208 227 / 1);
+	color: rgb(255 255 255 / 0);
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+	transition: all cubic-bezier(0.4, 0, 0.2, 1) 266ms;
+	border-color: rgb(0 0 0 / 0.2);
+	&:checked {
+		border-style: none;
+		color: rgb(255 255 255 / 1);
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,64 @@
+.content {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 3rem;
+}
+
+.block {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.07rem;
+
+	border-radius: 0.25rem;
+	margin-bottom: 0.75rem;
+	padding: 1rem;
+
+	&:active,
+	&:hover {
+		opacity: 1;
+	}
+	&_item {
+		display: flex;
+		align-items: center;
+	}
+	&_name {
+		font-size: 0.9rem;
+		opacity: 0.5;
+	}
+}
+
+.grip {
+	opacity: 0.25;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 266ms;
+	margin-left: -0.25rem;
+	margin-right: 0.12rem;
+
+	&:hover,
+	&:active {
+		opacity: 1;
+	}
+}
+
+.redacting {
+	opacity: 0.5;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 266ms;
+	margin-right: 0.5rem;
+	&:hover {
+		opacity: 1;
+	}
+}
+.delete {
+	opacity: 0.5;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 266ms;
+	&:hover {
+		opacity: 1;
+	}
+}

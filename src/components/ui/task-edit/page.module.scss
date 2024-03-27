@@ -1,0 +1,40 @@
+.select {
+	position: relative;
+	width: 140px;
+}
+.value {
+	position: absolute;
+	top: -0.5rem;
+	right: -1rem;
+	opacity: 0.3;
+	transition-duration: 266ms;
+	&:hover {
+		opacity: 1;
+		transition-property: opacity;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 266ms;
+	}
+}
+.is_show {
+	position: absolute;
+	width: 100%;
+	padding: 0.625rem;
+	left: 0;
+	z-index: 5;
+	background-color: rgb(255 255 255 / 1);
+	border: 1px solid rgb(0 0 0 / 0.1);
+	padding: 0.625rem;
+	top: calc(100% + 0.5rem);
+	box-shadow:
+		0 1px 3px 0 rgb(0 0 0 / 0.1),
+		0 1px 2px -1px rgb(0 0 0 / 0.1);
+	&_button {
+		display: block;
+		margin-bottom: 1rem;
+		:last-child {
+			margin-bottom: 0;
+			text-transform: capitalize;
+			border-radius: 0.5rem;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.container {
+	position: relative;
+	width: 20rem;
+	text-align: center;
+	&_forat_timer {
+		font-size: 5.33rem /* 85.28px */;
+		font-weight: 600;
+	}
+	&_button {
+		margin-top: 1.5rem;
+		opacity: 0.8;
+		transition-property: opacity;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 266ms;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&_delete_session {
+		position: absolute;
+		top: 0;
+		right: 0;
+		opacity: 0.4;
+		transition-property: opacity;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 266ms;
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+}

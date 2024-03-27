@@ -1,0 +1,62 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.roundsContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	margin-top: 0.25rem;
+}
+
+.button {
+	opacity: 0.2;
+	margin-top: 0.25rem;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 266ms;
+	&:hover {
+		opacity: 1;
+	}
+	&:disabled {
+		opacity: 0.2;
+	}
+}
+
+.round {
+	position: relative;
+	height: 1.25rem;
+	width: 1.25rem;
+	border: 1px solid rgba(0 0 0 /0.12);
+	border-radius: 0.25rem;
+
+	&::before {
+		background-color: rgb(0 0 0 / 0.2);
+		border-top-left-radius: 0.25rem;
+		border-bottom-left-radius: 0.25rem;
+		transition-property: all;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 300ms;
+
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0%;
+		height: 100%;
+	}
+
+	&.active::before {
+		transition-duration: 1000ms;
+		width: 40%;
+	}
+
+	&.completed::before {
+		border-radius: 0.25rem;
+		width: 100%;
+	}
+}

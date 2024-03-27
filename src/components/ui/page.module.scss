@@ -1,0 +1,53 @@
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&_animation {
+		width: 50px;
+		height: 50px;
+		animation: spin 1s linear infinite;
+		@keyframes spin {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	}
+}
+.heading {
+	font-size: 2.22rem;
+	font-weight: 500;
+	margin: 0 0 0 1.4rem;
+	user-select: none;
+}
+.line {
+	width: 100%;
+	height: 0.12rem;
+	margin: 0.75rem 0;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.badge {
+	width: 100%;
+	border-radius: 0.5rem;
+	width: max-content;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+	transition-property: color, background-color, border-color,
+		text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+		backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	&_grey {
+		background-color: rgb(181 190 217 / 0.2);
+	}
+	&_high {
+		background-color: rgba(236 0 0 /0.7);
+	}
+	&_medium {
+		background-color: rgb(251 146 60 / 0.8);
+	}
+	&_low {
+		background-color: rgb(96 165 250 / 0.8);
+	}
+}
