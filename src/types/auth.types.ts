@@ -8,6 +8,7 @@ export interface IAuthForm {
 export interface IUser extends IBase {
 	username?: string
 	email: string
+	status: Status;
 }
 
 export interface IAuthResponse {
@@ -32,3 +33,8 @@ export interface IProfileResponse {
 		value: string
 	}[]
 }
+export enum Status {
+	pending = 'pending',
+	active = 'active',
+	blocked = 'blocked'
+};

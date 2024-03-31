@@ -1,6 +1,7 @@
 'use client'
 
 import { useMutation } from '@tanstack/react-query'
+import type { AxiosError } from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -10,7 +11,7 @@ import { Heading } from '@/components/ui/Heading'
 import { Button } from '@/components/ui/buttons'
 import { Field } from '@/components/ui/fields/Field'
 
-import { IAuthForm } from '@/types/auth.types'
+import type { IAuthForm } from '@/types/auth.types'
 
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
 
@@ -31,9 +32,16 @@ export default function Auth() {
 		mutationFn: (data: IAuthForm) =>
 			authService.main(isSignInForm ? 'signin' : 'signup', data),
 		onSuccess() {
-			toast.success('Вы успешно авторизовались!')
+			toast.success(
+				isSignInForm
+					? 'Вы успешно авторизовались!'
+					: 'Осталось подтвердить вашу эл. почту, загляните на свой почтовый ящик!'
+			)
 			reset()
 			push(DASHBOARD_PAGES.HOME)
+		},
+		onError(error: AxiosError<any>) {
+			toast.warning(`${error.response?.data.message}`)
 		}
 	})
 

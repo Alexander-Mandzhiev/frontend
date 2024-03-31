@@ -10,6 +10,11 @@ class AuthService {
 		if (response.data.accessToken) saveTokenStorage(response.data.accessToken)
 		return response
 	}
+	async confirm(token: string) {
+		const response = await instance.get<IAuthResponse>(`/auth/confirm`, { params: { token } })
+		if (response.data?.accessToken) saveTokenStorage(response.data.accessToken)
+		return response
+	}
 	async getNewTokens() {
 		const response = await instance.post<IAuthResponse>('/auth/signin/refresh')
 		if (response.data.accessToken) saveTokenStorage(response.data.accessToken)
